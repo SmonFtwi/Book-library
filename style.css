@@ -1,0 +1,126 @@
+body{
+    margin: 0px;
+    padding: 0px;
+    background-color: #f1f5f9;
+}
+
+header{
+    width:100%;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #94a3b8;
+    
+
+}
+
+header h1{
+    margin-left:10%;
+}
+
+main .plus{
+    background-color: #94a3b8;
+    width:10vh;
+    height:10vh;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 5vh; /* Adjust this value to control the distance from the bottom */
+    right: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer; 
+
+}
+.tooltip {
+    position: absolute;
+    width:15vh;
+    
+    left: 50%;
+    transform: translateX(-125%); 
+    background-color: #94a3b8;
+    color: black;
+    padding: 2vh 3vh;
+    border-radius: 10px;
+    opacity: 0; /* Initially hide the tooltip */
+    pointer-events: none; /* Ensure tooltip doesn't interfere with hover */
+    transition: opacity 0.2s ease-in-out;
+}
+main .plus:hover{
+    border-top-right-radius: 50%; /* Set the border radius for the top-right corner */
+    border-bottom-right-radius:50%;
+}
+.plus:hover .tooltip {
+    opacity: 1; /* Show the tooltip on hover */  
+}
+
+
+#addBookForm {
+    margin: 5% 30%;
+    height:30%;
+    width:40%;
+    padding: 2vh 5vh;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
+    border: 1px white solid;
+    background-color: #94a3b8;
+    display: none;
+    border: 0;
+    border-radius: 10px;
+    
+}
+#addBookForm form{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap; 
+    font-size: 1rem;  
+}
+#addBookForm h2{
+    text-align: center;
+}
+form div {
+    margin:2vh 0; 
+   
+}
+
+form div input{
+    width:60%;
+    margin-left: 2vh;
+    border-radius: 5px;
+    border: 0;
+    padding: 1vh;
+    
+}
+
+.check {
+    width:20% ;
+    height: 3vh;
+}
+
+form div label {
+    padding-right: 10%;
+}
+
+form div:nth-child(2) label{
+    padding-right: 7%;
+}
+form div:nth-child(3) label {
+    padding-right: 8%;
+}
+
+
+
+form button {
+    text-align: center;
+    width: 30%;
+    margin-left: 6vh;
+    padding:1vh 0;
+    border:0;
+    border-radius: 10px;
+}
+
+
+
+  
+
