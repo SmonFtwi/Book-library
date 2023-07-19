@@ -32,6 +32,7 @@ main .plus{
     align-items: center;
     justify-content: center;
     cursor: pointer; 
+    position: fixed;
 
 }
 .tooltip {
@@ -57,19 +58,23 @@ main .plus:hover{
 }
 
 
+/* Add styles for the popup form */
 #addBookForm {
-    margin: 5% 30%;
-    height:30%;
-    width:40%;
+    position: fixed;
+    top: 50%; /* Adjust this value to control the vertical position */
+    left: 50%; /* Adjust this value to control the horizontal position */
+    transform: translate(-50%, -50%);
+    width: 40%;
+    max-height: 80vh; /* Set a maximum height if needed */
     padding: 2vh 5vh;
-    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
-    border: 1px white solid;
+    box-shadow: 2px 2px 4px 0px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
     background-color: #94a3b8;
     display: none;
     border: 0;
-    border-radius: 10px;
-    
+    z-index: 9999; /* Set a high z-index to make the form appear on top of other content */
 }
+
 #addBookForm form{
     display: flex;
     flex-direction: column;
@@ -92,7 +97,11 @@ form div input{
     padding: 1vh;
     
 }
-
+input[type="text"] {
+    overflow: hidden;
+    white-space: nowrap; /* Prevent text from wrapping to the next line */
+    text-overflow: ellipsis; /* Add an ellipsis (...) to indicate that text is cut off */
+  }  
 .check {
     width:20% ;
     height: 3vh;
@@ -120,7 +129,56 @@ form button {
     border-radius: 10px;
 }
 
+ #bookCard{
+    display: grid;
+    grid-template-columns: repeat(auto-fill , minmax(40vh , 1fr));
+    justify-items: center;
+    align-items: center;
+    padding: 5vh;
+    column-gap: 5vh;
+    row-gap: 5vh;
+}
+
+main #bookCard .bookList{
+    width: 80%;
+    padding: 1vh 2vh  0  2vh;
+    box-shadow: 2px 2px 4px 0px rgba(0,0,0,0.5);
+    
+    border: 2px solid #94a3b8;;
+    border-radius: 5px;
+    
+    
+
+}
+
+.bookInfo h2{
+    border-bottom: 2px solid #94a3b8; 
+}
+main #bookCard .bookList .bookInfo{
+    border-bottom: 0.5px solid #94a3b8;
+}
+
+.buttons{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 2vh;
+    border-bottom: 0.5px solid #94a3b8;
+    padding-bottom: 2vh;
+
+}
+
+.buttons button {
+    padding: 1vh 2vh;
+    border: 0;
+    border-radius: 10px;
+}
+
+.buttons .delete{
+    background-color: #ef4444;
+    color: white;
+    
+}
 
 
-  
 
